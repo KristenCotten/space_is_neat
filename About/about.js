@@ -16,10 +16,15 @@ const randomMarsFacts = [
 document.getElementById("random_fact_btn").addEventListener("click", generateRandomFact)
 
 function generateRandomFact() {
+    document.getElementById("random_facts_container").innerHTML = ""
     const factImg = document.createElement("img")
-    factImg.setAttribute
+    const factImgUrl = pickRandomFact(randomMarsFacts)
+    factImg.setAttribute("src", factImgUrl)
+    document.getElementById("random_facts_container").appendChild(factImg)
 }
 
 function pickRandomFact(facts) {
-    
+    const randIndex = Math.floor(Math.random() * randomMarsFacts.length)
+    const randFact = facts[randIndex]
+    return randFact
 }
