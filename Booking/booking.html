@@ -15,11 +15,26 @@
     <link rel="stylesheet" href="./booking.css">
 </head>
 <body>
-    <main class="container">
-      <header>
-        <h1>Book A Flight</h1>
+  <!-- Top Navigation Bar -->
+  <nav>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Book a Flight</a>
+        </li>  
+      </ul>
+</nav>
+    <main class="container-fluid">
+      <header id="booking_header">
+        <h1>Book a Flight</h1>
     </header>
-        <div class="row">
+    
+    <div class="row">
             <div class="col-md-4">
                 <form id="booking_form">
                     <!-- First Name -->
@@ -75,9 +90,8 @@
             <!-- starts out empty, dynamically populated -->
             </div>
         </div>
-       
+      
       </main>
-
 
     <script src="./booking.js"></script>
 </body>
