@@ -19,6 +19,7 @@ function generateRandomFact() {
     document.getElementById("random_facts_container").innerHTML = ""
     const factImg = document.createElement("img")
     const factImgUrl = pickRandomFact(randomMarsFacts)
+    factImg.setAttribute("class", "img-fluid")
     factImg.setAttribute("src", factImgUrl)
     document.getElementById("random_facts_container").appendChild(factImg)
 }
