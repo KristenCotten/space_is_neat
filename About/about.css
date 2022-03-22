@@ -4,3 +4,7 @@
     justify-content: center;
     align-items: center;
 } */
+
+#mars_weather_iframe {
+    object-fit: contain;
+}
