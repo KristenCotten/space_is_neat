@@ -20,3 +20,11 @@ nav {
 .btn {
   margin: 5px;
 }
+
+.card-body {
+  color: black;
+}
+
+#past_launches_hdg {
+  text-align: center;
+}

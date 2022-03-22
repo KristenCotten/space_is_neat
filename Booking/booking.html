@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Flight</title>
     <!-- Bootstrap CSS -->
     <link
@@ -12,12 +12,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./booking.css">
-</head>
-<body>
-  <!-- Top Navigation Bar -->
-  <nav>
-    <ul class="nav justify-content-end">
+    <link rel="stylesheet" href="./booking.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav>
+      <ul class="nav justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="#">Home</a>
         </li>
@@ -25,74 +25,96 @@
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Book a Flight</a>
-        </li>  
+          <a class="nav-link active" aria-current="page" href="#"
+            >Book a Flight</a
+          >
+        </li>
       </ul>
-</nav>
+    </nav>
     <main class="container-fluid">
-      <header id="booking_header">
+      <header class="row" id="booking_header">
         <h1>Book a Flight</h1>
-    </header>
-    
-    <div class="row">
-            <div class="col-md-4">
-                <form id="booking_form">
-                    <!-- First Name -->
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input
-                  required
-                  type="text"
-                  class="form-control"
-                  id="firstName"
-                  placeholder="First Name"
-                />
-              </div>
-              <!-- Last Name -->
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input
-                  required
-                  type="text"
-                  class="form-control"
-                  id="lastName"
-                  placeholder="Last Name"
-                />
-              </div>
-              <!-- Email -->
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input
-                  required
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="name@gmail.com"
-                />
-                <!-- Select Flight Date -->
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Select Date of Departure</option>
-                    <option value="1">April 3, 2022 SpaceX Falcon 9</option>
-                    <option value="2">April 19, 2022 SpaceX Falcon 9</option>
-                    <option value="3">May 1, 2022 SpaceX Falcon 9</option>
-                  </select>
-              <button
-                type="submit"
-                class="btn btn-light submit_btn"
-                id="booking_btn"
-              >Book Now!
+      </header>
+
+      <div class="row">
+        <div class="col-md-3">
+          <form id="booking_form">
+            <!-- First Name -->
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="First Name"
+              />
+            </div>
+            <!-- Last Name -->
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Last Name"
+              />
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                required
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="name@gmail.com"
+              />
+            </div>
+            <!-- Select Flight Date -->
+            <select
+              required
+              id="flight"
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+            >
+              <option selected>Select Date of Departure</option>
+              <option value="April 3, 2022 SpaceX Falcon 9">
+                April 3, 2022 SpaceX Falcon 9
+              </option>
+              <option value="April 19, 2022 SpaceX Falcon 9">
+                April 19, 2022 SpaceX Falcon 9
+              </option>
+              <option value="May 1, 2022 SpaceX Falcon 9">
+                May 1, 2022 SpaceX Falcon 9
+              </option>
+            </select>
+            <button
+              type="submit"
+              class="btn btn-light submit_btn"
+              id="booking_btn"
+            >
+              Book Now!
             </button>
-                </form>
-            </div>
-            <div class="col-md-8">
-                <h4>Upcoming Space Flights</h4>
-                <div id="trip_container"></div>
-            <!-- starts out empty, dynamically populated -->
-            </div>
+          </form>
         </div>
-      
-      </main>
+        <div class="col-md-9">
+          <h4>Your Upcoming Space Flights</h4>
+          <div id="trip_container"></div>
+          <!-- starts out empty, dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Past Launches/Upcoming Launches -->
+      <section id="launches_container">
+        <h4 id="past_launches_hdg">Past SpaceX Launches</h4>
+        <div id="launch_vid_container"></div>
+        <!-- YOUTUBE VIDEOS -->
+        <!-- dynamically populated with most current launch videos -->
+      </section>
+    </main>
 
     <script src="./booking.js"></script>
-</body>
+  </body>
 </html>
