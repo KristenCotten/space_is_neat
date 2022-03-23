@@ -1,3 +1,81 @@
+const NASA_API_KEY = "OH7EcsbJosWOagiPImRUGXITcyoUJb5pDczobR4d"
+const NASA_API_ROOT = "https://images-api.nasa.gov/search?"
+/*
+Query Params
+
+Name Type Description
+q (optional) string Free text search terms to compare to all indexed metadata.
+center (optional) string NASA center which published the media.
+description
+(optional)
+string Terms to search for in “Description” fields.
+description_508
+(optional)
+string Terms to search for in “508 Description” fields.
+keywords (optional) string Terms to search for in “Keywords” fields. Separate multiple values with commas.
+location (optional) string Terms to search for in “Location” fields.
+media_type
+(optional)
+string Media types to restrict the search to. Available types: [“image”, “audio”]. Separate multiple
+values with commas.
+nasa_id (optional) string The media asset’s NASA ID.
+page (optional) integer Page number, starting at 1, of results to get.
+photographer
+(optional)
+string The primary photographer’s name.
+secondary_creator
+(optional)
+string A secondary photographer/videographer’s name.
+title (optional) string Terms to search for in “Title” fields.
+year_start (optional) string The start year for results. Format: YYYY.
+year_end (optional) string The end year for results. Format: YYYY.
+*/
+
+const imgContainer = document.getElementById("image_carousel_container")
+
+window.addEventListener("load", handlePageLoad)
+
+const nasaImagesUrl = `${NASA_API_ROOT}q=mars rover&media_type=image&year_start=2022&year_end=2022`
+
+const nasaAudioUrl = `${NASA_API_ROOT}q=mars rover&media_type=audio&year_start=2021&year_end=2022`
+
+function handlePageLoad() {
+    getNasaItems(nasaImagesUrl, displayImages)
+    // getNasaItems(nasaAudioUrl, displayAudio)
+
+    function getNasaItems(url, displayFunction) {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displayFunction(data.collection.items)) 
+    }
+
+    function displayImages(nasaImages) {
+        for(let nasaImage of nasaImages) {
+            const imgUrl = nasaImage.links[0].href
+            
+            const imgDiv = document.createElement("div")
+            imgDiv.classList.add("carousel-item", "card-body")
+            const img = document.createElement("img")
+            img.setAttribute("src", imgUrl)
+
+            imgDiv.appendChild(img)
+            imgContainer.appendChild(imgDiv)
+        }
+        // imgContainer.firstChild.classList.add("active")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 const randomMarsFacts = [
     "https://mars.nasa.gov/files/mep/facts/Planet-Mars-Facts.jpg", 
     "https://mars.nasa.gov/files/mep/facts/Moons-Mars-Facts.jpg", 
