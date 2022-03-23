@@ -7,6 +7,10 @@ body {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  font-family: "Orbitron", sans-serif;
+}
+main {
+  font-family: "Orbitron", sans-serif;
 }
 nav {
   color: white;
@@ -20,11 +24,17 @@ nav {
 .btn {
   margin: 5px;
 }
-
+.card {
+  margin: 15px;
+}
 .card-body {
   color: black;
 }
-
+.you_tube_vid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #past_launches_hdg {
   text-align: center;
 }

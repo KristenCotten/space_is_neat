@@ -27,7 +27,7 @@ async function getMarsGif() {
   //build api url
   const url = "https://g.tenor.com/v1/search?key=$LIVDSRZULELA&q=mars";
 
-  randNum = Math.floor(Math.random() * 12);
+  randNum = Math.floor(Math.random() * 20);
 
   const results = await fetch(url);
   const data = await results.json();
@@ -40,7 +40,7 @@ async function getMarsGif() {
 async function bookTrip({ firstName, lastName, email, flight }) {
   const card = document.createElement("div");
   card.setAttribute("class", "card");
-  card.setAttribute("style", "width: 18");
+  card.setAttribute("style", "width: 18rem");
   document.getElementById("trip_container").appendChild(card);
 
   const cardImage = document.createElement("img");
@@ -90,7 +90,29 @@ function handleDeleteCard(evt) {
   evt.target.parentElement.parentElement.remove();
 }
 
-function handleEditCard() {}
+function handleEditCard(evt) {
+  //ask user for new info to change
+  const newFirstName = prompt("Enter passenger's first name");
+  const newLastName = prompt("Enter passenger's last name");
+  const newEmail = prompt("Enter passenger's email address");
+
+  const cardBody = evt.target.parentElement;
+
+  if (
+    newLastName !== null &&
+    newLastName.length > 0 &&
+    newFirstName !== null &&
+    newFirstName.length > 0
+  ) {
+    const passengerElt = cardBody.children[1];
+    passengerElt.innerText = `${newLastName}, ${newFirstName}`;
+  }
+
+  if (newEmail !== null && newEmail.length > 0) {
+    const emailElt = cardBody.children[2];
+    emailElt.innerText = newEmail;
+  }
+}
 
 //Event listener to populate YouTube videos on page load
 window.addEventListener("load", loadLaunchVids);
@@ -107,35 +129,30 @@ async function getRecentLaunchVids() {
   );
   console.log(recentLaunches); //checking I get array of just launch objects from march 1, 2022
 
-  const vids = recentLaunches.map((vid) => vid.links.webcast);
-  console.log(vids);
+  const vids = recentLaunches.map((vid) => vid.links.youtube_id);
+  // console.log(vids); //checking I get youtube links in an array
   return vids;
 }
 
 async function loadLaunchVids() {
   const vids = await getRecentLaunchVids();
+  const video1 = "https://www.youtube.com/embed/" + vids[0];
+  const video2 = "https://www.youtube.com/embed/" + vids[1];
+  const video3 = "https://www.youtube.com/embed/" + vids[2];
 
-  //build carousel to hold videos
-  const carouselContainer = document.createElement("div");
-  carouselContainer.setAttribute("id", "carousel_container");
-  carouselContainer.setAttribute("class", "carousel-slide carousel-fade");
-  carouselContainer.setAttribute("data-bs-ride", "carousel");
+  //build space to hold videos
+  const launchVidContainer = document.getElementById("launch_vid_container");
 
-  carouselContainer.innerHTML = `<div class="carousel-inner">
-  <div class="carousel-item active">
-    <iframe src="${}" class="d-block w-100" alt="..."></iframe>
+  launchVidContainer.innerHTML = `
+   <div class="col-md-3 you_tube_vid">
+   <iframe width="420" height="315" src="${video1}"></iframe>
+   </div>
+   <div class="col-md-3 you_tube_vid">
+   <iframe width="420" height="315" src="${video2}"></iframe>
   </div>
-  <div class="carousel-item">
-    <iframe src="${}" class="d-block w-100" alt="..."></iframe>
+  <div class="col-md-3 you_tube_vid">
+  <iframe width="420" height="315" src="${video3}"></iframe>
   </div>
-  <div class="carousel-item">
-    <iframe src="${}" class="d-block w-100" alt="..."></iframe>
-  </div>
-</div>`;
+
+  `;
 }
-
-/*
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-*/
