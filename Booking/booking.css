@@ -15,12 +15,11 @@ main {
 nav {
   color: white;
 }
-.form-group {
+.form-group,
+.form-select {
   margin: 10px;
 }
-.form-select {
-  margin-top: 10px;
-}
+
 .btn {
   margin: 5px;
 }
@@ -30,11 +29,24 @@ nav {
 .card-body {
   color: black;
 }
-.you_tube_vid {
+
+.card-img-top {
+  padding-top: 10px;
+}
+#launch_vid_container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.you_tube_vid_container {
+  padding: 20px;
+}
+
+.responsive_iframe {
+  padding: 10px;
 }
 #past_launches_hdg {
   text-align: center;
+  font-weight: bold;
+  padding: 50px;
 }

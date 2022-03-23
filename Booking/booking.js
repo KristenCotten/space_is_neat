@@ -1,6 +1,6 @@
 const form = document.getElementById("booking_form"); //variable for the whole form
 
-form.addEventListener("submit", handleFormSubmit);
+form.addEventListener("submit", handleFormSubmit); //event listen for form submit
 
 function handleFormSubmit(evt) {
   evt.preventDefault(); //pause the submit
@@ -14,6 +14,7 @@ function handleFormSubmit(evt) {
   //reset form
   form.reset();
 
+  //call function to book a trip/create a trip card
   bookTrip({
     firstName,
     lastName,
@@ -27,13 +28,13 @@ async function getMarsGif() {
   //build api url
   const url = "https://g.tenor.com/v1/search?key=$LIVDSRZULELA&q=mars";
 
-  randNum = Math.floor(Math.random() * 20);
+  randNum = Math.floor(Math.random() * 20); //get random number to be used to select gif
 
-  const results = await fetch(url);
-  const data = await results.json();
-  const srcUrl = data.results[randNum].media[0].tinygif.url;
+  const results = await fetch(url); //get all the api results
+  const data = await results.json(); //parse them into json
+  const srcUrl = data.results[randNum].media[0].tinygif.url; //grab the tiny gif url from the gifobj
 
-  return srcUrl;
+  return srcUrl; //return just the url
 }
 
 //function to create a card with the booked trip info
@@ -125,9 +126,9 @@ async function getRecentLaunchVids() {
 
   //filter by unix date and youtube vid not null
   const recentLaunches = launches.filter(
-    (launch) => (launch.date_unix > 1646092800) & (launch.links[5] !== null)
+    (launch) => launch.date_unix > 1646092800 && launch.links[5] !== null
   );
-  console.log(recentLaunches); //checking I get array of just launch objects from march 1, 2022
+  // console.log(recentLaunches); //checking I get array of just launch objects from march 1, 2022
 
   const vids = recentLaunches.map((vid) => vid.links.youtube_id);
   // console.log(vids); //checking I get youtube links in an array
@@ -136,6 +137,7 @@ async function getRecentLaunchVids() {
 
 async function loadLaunchVids() {
   const vids = await getRecentLaunchVids();
+  //creating Youtube embed links needed for iframe
   const video1 = "https://www.youtube.com/embed/" + vids[0];
   const video2 = "https://www.youtube.com/embed/" + vids[1];
   const video3 = "https://www.youtube.com/embed/" + vids[2];
@@ -143,16 +145,16 @@ async function loadLaunchVids() {
   //build space to hold videos
   const launchVidContainer = document.getElementById("launch_vid_container");
 
+  //creating videos/iframes in the container
   launchVidContainer.innerHTML = `
-   <div class="col-md-3 you_tube_vid">
-   <iframe width="420" height="315" src="${video1}"></iframe>
+   <div class="you_tube_vid_container">
+   <iframe class="responsive_iframe" width="420" height="315" src="${video1}"></iframe>
    </div>
-   <div class="col-md-3 you_tube_vid">
-   <iframe width="420" height="315" src="${video2}"></iframe>
+   <div class="you_tube_vid_container">
+   <iframe class="responsive_iframe" width="420" height="315" src="${video2}"></iframe>
   </div>
-  <div class="col-md-3 you_tube_vid">
-  <iframe width="420" height="315" src="${video3}"></iframe>
+  <div class="you_tube_vid_container">
+  <iframe class="responsive_iframe" width="420" height="315" src="${video3}"></iframe>
   </div>
-
   `;
 }

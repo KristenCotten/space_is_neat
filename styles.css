@@ -17,7 +17,10 @@ nav {
   font-family: "Orbitron", sans-serif;
 }
 #landing_subheader {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 150px;
   font-family: "Orbitron", sans-serif;
+}
+#landing_blurb_container {
+  margin-top: 10px;
 }
