@@ -5,6 +5,16 @@
     align-items: center;
 } */
 
-#mars_weather_iframe {
+/* #mars_weather_iframe {
     object-fit: contain;
+} */
+
+.card {
+    width: 22rem;
+    height: 20rem;
+    
+}
+.contain {
+    width: 100%;
+    height: auto;
 }

@@ -15,13 +15,13 @@
     <nav>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="..\index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link active" aria-current="page" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Book a Flight</a>
+              <a class="nav-link" href="..\Booking\booking.html">Book a Flight</a>
             </li>  
           </ul>
     </nav>
@@ -37,7 +37,7 @@
                 <h2>Helpful Info</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div id="card_data" class="col">
-                        <div id="data_carousel_controls" class="card carousel slide" data-bus-ride="carousel" style="max-width: 20rem;">
+                        <div id="data_carousel_controls" class="card carousel slide" data-bus-ride="carousel">
                             <div class="card-header text-center">Data</div>
                             <div class="carousel-inner">
                                 <div id="data_slide_weather_F" class="carousel-item active card-body">
@@ -118,83 +118,13 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                               </button>
-                            
-                            <div class="card-footer"></div>
                         </div>
                     </div>
                     <div id="card_images" class="col">
-                        <div id="images_carousel_controls" class="card carousel slide" data-bus-ride="carousel" style="max-width: 18rem;">
+                        <div id="images_carousel_controls" class="card carousel slide" data-bus-ride="carousel">
                             <div class="card-header text-center">Images</div>
                             <div id="image_carousel_container" class="carousel-inner">
-                                <!-- <div id="data_slide_weather_F" class="carousel-item active card-body">
-                                    <h5 class="card-title text-center">Today's Weather (°F)</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>-4°</div>
-                                            <div>High</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>-98°</div>
-                                            <div>Low</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_weather_C"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Today's Weather (°C)</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>-20°</div>
-                                            <div>High</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>-72°</div>
-                                            <div>Low</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_sun"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Sunrise, Sunset</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>6:37</div>
-                                            <div>AM</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>6:35</div>
-                                            <div>PM</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_atmosphere"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Atmosphere</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>Moderate</div>
-                                            <div>UV</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>Sunny</div>
-                                            <div>Condition</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_season"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Season</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>Spring</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_pressure"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Pressue</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>827</div>
-                                            <div>mean Pascals</div>
-                                        </div>
-                                    </div>
-                                </div> -->
+
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#images_carousel_controls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -204,12 +134,10 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                               </button>
-                            
-                            <div class="card-footer"></div>
                         </div>
                     </div>
                     <div id="card_compare" class="col">
-                        <div id="compare_carousel_controls" class="card carousel slide" data-bus-ride="carousel" style="max-width: 18rem;">
+                        <div id="compare_carousel_controls" class="card carousel slide" data-bus-ride="carousel">
                             <div class="card-header text-center">Compare</div>
                             <div class="carousel-inner">
                                 <div id="compare_slide_distance" class="carousel-item active card-body">
@@ -333,83 +261,13 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                               </button>
-                            
-                            <div class="card-footer"></div>
                         </div>
                     </div>
                     <div id="card_news" class="col">
-                        <div id="news_carousel_controls" class="card carousel slide" data-bus-ride="carousel" style="max-width: 18rem;">
-                            <div class="card-header text-center">News</div>
-                            <div class="carousel-inner">
-                                <div id="data_slide_weather_F" class="carousel-item active card-body">
-                                    <h5 class="card-title text-center">Today's Weather (°F)</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>-4°</div>
-                                            <div>High</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>-98°</div>
-                                            <div>Low</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_weather_C"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Today's Weather (°C)</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>-20°</div>
-                                            <div>High</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>-72°</div>
-                                            <div>Low</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_sun"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Sunrise, Sunset</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>6:37</div>
-                                            <div>AM</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>6:35</div>
-                                            <div>PM</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_atmosphere"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Atmosphere</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>Moderate</div>
-                                            <div>UV</div>
-                                        </div>
-                                        <div class="col">
-                                            <div>Sunny</div>
-                                            <div>Condition</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_season"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Season</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>Spring</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  id="data_slide_pressure"class="carousel-item card-body">
-                                    <h5 class="card-title text-center">Pressue</h5>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <div>827</div>
-                                            <div>mean Pascals</div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div id="news_carousel_controls" class="card carousel slide" data-bus-ride="carousel">
+                            <div class="card-header text-center">Podcasts</div>
+                            <div id="audio_carousel_container" class="carousel-inner">
+                                
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#news_carousel_controls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -419,8 +277,6 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                               </button>
-                            
-                            <div class="card-footer"></div>
                         </div>
                     </div>
                 </div>
