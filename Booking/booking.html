@@ -44,7 +44,7 @@
       </header>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-12 col-sm-4 col-md-3">
           <form id="booking_form">
             <!-- First Name -->
             <div class="form-group">
@@ -86,7 +86,7 @@
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
             >
-              <option selected>Select Date of Departure</option>
+              <option selected>Date of Departure</option>
               <option value="April 3, 2022 SpaceX Falcon 9">
                 April 3, 2022 SpaceX Falcon 9
               </option>
@@ -106,7 +106,7 @@
             </button>
           </form>
         </div>
-        <div class="col-md-9">
+        <div class="col-12 col-sm-8 col-md-9">
           <h4 id="your_flights_hdg">Your Upcoming Space Flights</h4>
           <div id="trip_container" class="row"></div>
           <!-- starts out empty, dynamically populated -->
@@ -114,9 +114,9 @@
       </div>
 
       <!-- Past Launches/Upcoming Launches -->
-      <section id="launches_container" class="container">
+      <section id="launches_container">
         <h4 id="past_launches_hdg">Past SpaceX Launches</h4>
-        <div id="launch_vid_container" class="row"></div>
+        <div id="launch_vid_container"></div>
         <!-- YOUTUBE VIDEOS -->
         <!-- dynamically populated with most current launch videos -->
       </section>
