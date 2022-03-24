@@ -2,7 +2,7 @@ const form = document.getElementById("booking_form"); //variable for the whole f
 
 form.addEventListener("submit", handleFormSubmit); //event listen for form submit
 
-function handleFormSubmit(evt) {
+async function handleFormSubmit(evt) {
   evt.preventDefault(); //pause the submit
 
   //save input as form variables
@@ -15,12 +15,24 @@ function handleFormSubmit(evt) {
   form.reset();
 
   //call function to book a trip/create a trip card
-  bookTrip({
+  await bookTrip({
     firstName,
     lastName,
     email,
     flight,
   });
+
+  //save data to session storage
+  sessionStorage.setItem(
+    "tripListItems",
+    document.getElementById("trip_container").innerHTML
+  );
+}
+
+//check if we have saved data and update page
+let savedData = sessionStorage.getItem("tripListItems");
+if (savedData !== null && savedData.length > 0) {
+  document.getElementById("trip_container").innerHTML = savedData;
 }
 
 //get Mars GIF for card
@@ -89,6 +101,11 @@ async function bookTrip({ firstName, lastName, email, flight }) {
 
 function handleDeleteCard(evt) {
   evt.target.parentElement.parentElement.remove();
+
+  sessionStorage.setItem(
+    "tripListItems",
+    document.getElementById("trip_container").innerHTML
+  );
 }
 
 function handleEditCard(evt) {
@@ -113,6 +130,11 @@ function handleEditCard(evt) {
     const emailElt = cardBody.children[2];
     emailElt.innerText = newEmail;
   }
+
+  sessionStorage.setItem(
+    "tripListItems",
+    document.getElementById("trip_container").innerHTML
+  );
 }
 
 //Event listener to populate YouTube videos on page load
