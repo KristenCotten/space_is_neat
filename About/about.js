@@ -33,6 +33,8 @@ year_end (optional) string The end year for results. Format: YYYY.
 
 const imgContainer = document.getElementById("image_carousel_container")
 
+const audioContainer = document.getElementById("audio_carousel_container")
+
 window.addEventListener("load", handlePageLoad)
 
 const nasaImagesUrl = `${NASA_API_ROOT}q=mars rover&media_type=image&year_start=2022&year_end=2022`
@@ -41,7 +43,7 @@ const nasaAudioUrl = `${NASA_API_ROOT}q=mars rover&media_type=audio&year_start=2
 
 function handlePageLoad() {
     getNasaItems(nasaImagesUrl, displayImages)
-    // getNasaItems(nasaAudioUrl, displayAudio)
+    getNasaItems(nasaAudioUrl, displayAudio)
 
     function getNasaItems(url, displayFunction) {
         fetch(url)
@@ -57,11 +59,40 @@ function handlePageLoad() {
             imgDiv.classList.add("carousel-item", "card-body")
             const img = document.createElement("img")
             img.setAttribute("src", imgUrl)
-
+            img.setAttribute("class", "contain")
             imgDiv.appendChild(img)
             imgContainer.appendChild(imgDiv)
         }
-        // imgContainer.firstChild.classList.add("active")
+        imgContainer.firstElementChild.classList.add("active")
+    }
+
+    function displayAudio(nasaAudioJsons) {
+        for(let nasaAudioJson of nasaAudioJsons) {
+            const audioTitle = nasaAudioJson.data[0].title
+            const audioJsonUrl = nasaAudioJson.href
+            fetch(audioJsonUrl)
+                .then(res => res.json())
+                .then(data => buildDisplay(data[0], audioTitle))            
+        }
+        function buildDisplay(nasaAudioUrl, nasaAudioTitle) {
+            console.log(nasaAudioTitle)
+            const audioHeader = document.createElement("h5")
+            audioHeader.classList.add("mt-5", "text-center")
+            audioHeader.innerText = nasaAudioTitle             
+            const audioDiv = document.createElement("div")
+            audioDiv.classList.add("carousel-item", "card-body", "mt-5")
+            const audio = document.createElement("audio")
+            audio.setAttribute("controls", "")
+            const audioSource = document.createElement("source")
+            audioSource.setAttribute("src", nasaAudioUrl)
+            audioSource.setAttribute("type", "audio/mpeg")            
+            audio.appendChild(audioSource)
+            audioDiv.appendChild(audio)
+            audioDiv.appendChild(audioHeader)
+            audioContainer.appendChild(audioDiv)            
+            
+            audioContainer.firstElementChild.classList.add("active")
+        }
     }
 }
 
