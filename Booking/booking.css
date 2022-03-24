@@ -50,3 +50,9 @@ nav {
   font-weight: bold;
   padding: 50px;
 }
+#trip_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
