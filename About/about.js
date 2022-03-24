@@ -39,7 +39,7 @@ window.addEventListener("load", handlePageLoad)
 
 const nasaImagesUrl = `${NASA_API_ROOT}q=mars rover&media_type=image&year_start=2022&year_end=2022`
 
-const nasaAudioUrl = `${NASA_API_ROOT}q=mars rover&media_type=audio&year_start=2021&year_end=2022`
+const nasaAudioUrl = `${NASA_API_ROOT}q=mars&media_type=audio&year_start=2021&year_end=2022`
 
 function handlePageLoad() {
     getNasaItems(nasaImagesUrl, displayImages)
@@ -75,12 +75,11 @@ function handlePageLoad() {
                 .then(data => buildDisplay(data[0], audioTitle))            
         }
         function buildDisplay(nasaAudioUrl, nasaAudioTitle) {
-            console.log(nasaAudioTitle)
             const audioHeader = document.createElement("h5")
             audioHeader.classList.add("mt-5", "text-center")
             audioHeader.innerText = nasaAudioTitle             
             const audioDiv = document.createElement("div")
-            audioDiv.classList.add("carousel-item", "card-body", "mt-5")
+            audioDiv.classList.add("carousel-item", "card-body")
             const audio = document.createElement("audio")
             audio.setAttribute("controls", "")
             const audioSource = document.createElement("source")

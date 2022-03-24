@@ -10,7 +10,7 @@
 } */
 body {
     color: white;
-    background-image: url("https://i2.wp.com/www.humansinspace.org/wp/wp-content/uploads/2014/05/Person-on-Mars.jpg");
+    background-image: url("https://images.unsplash.com/photo-1612892483236-52d32a0e0ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;    
@@ -40,8 +40,8 @@ main {
   #random_fact_btn {
     background-color: #d74b28;
   }
-/* #cards_container {
+/* .carousel-inner {
     display: flex;    
-    justify-content: space-between;
+    align-items: center;
 } */
   
