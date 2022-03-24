@@ -8,13 +8,40 @@
 /* #mars_weather_iframe {
     object-fit: contain;
 } */
+body {
+    color: white;
+    background-image: url("https://i2.wp.com/www.humansinspace.org/wp/wp-content/uploads/2014/05/Person-on-Mars.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;    
+    font-family: "Orbitron", sans-serif;
+  }
 
 .card {
     width: 22rem;
     height: 20rem;
+    background-color: #062844;    
+    
     
 }
 .contain {
     width: 100%;
     height: auto;
 }
+
+.card-header {
+    background-color: #01386e;
+    
+}
+main {
+    font-family: "Orbitron", sans-serif;
+  }
+
+  #random_fact_btn {
+    background-color: #d74b28;
+  }
+/* #cards_container {
+    display: flex;    
+    justify-content: space-between;
+} */
+  
