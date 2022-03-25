@@ -13,24 +13,28 @@ function handleLandingPageLoad() {
         .then(data => displayMarsReportVideos(data.collection.items))
     
 
-    function displayMarsReportVideos(marsReportJsons) {
-        console.log(marsReportJsons)
+    function displayMarsReportVideos(marsReportJsons) {       
         // for(let marsReportJson of marsReportJsons) {
         //     const reportJsonUrl = marsReportJson.href
         // }
-        for (let index = 0; index < marsReportJsons[3]; index++) {
+        for (let index = 0; index < 3; index++) {
             const marsReportJson = marsReportJsons[index];
-            console.log(marsReportJson);
-            // const reportJsonUrl = marsReportJson.href
-            // fetch(reportJsonUrl)
-            //     .then(res => res.json())
-            //     .then(data => buildVidDisplay(data[0]))
+            //console.log(marsReportJson);
+            const reportJsonUrl = marsReportJson.href
+            //console.log(reportJsonUrl);
+            
+            
+            fetch(reportJsonUrl)
+                .then(res => res.json())
+                .then(data => buildVidDisplay(data[0]))
         }
         function buildVidDisplay(marsReportVidUrl) {
+            console.log(marsReportVidUrl);
             const video = document.createElement("video")
             video.setAttribute("width", "420")
             video.setAttribute("height", "315")
-            const videoSrc = document.createElement
+            video.setAttribute("controls", "")
+            const videoSrc = document.createElement("source")
             videoSrc.setAttribute("src", marsReportVidUrl)
             videoSrc.setAttribute("type", "video/mp4")
             video.appendChild(videoSrc)

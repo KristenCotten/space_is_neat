@@ -1,13 +1,4 @@
-/* #random_facts_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-} */
 
-/* #mars_weather_iframe {
-    object-fit: contain;
-} */
 body {
     color: white;
     background-image: url("https://images.unsplash.com/photo-1612892483236-52d32a0e0ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -40,8 +31,5 @@ main {
   #random_fact_btn {
     background-color: #d74b28;
   }
-/* .carousel-inner {
-    display: flex;    
-    align-items: center;
-} */
+
   
