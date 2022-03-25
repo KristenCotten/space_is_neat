@@ -74,10 +74,15 @@ async function bookTrip({ firstName, lastName, email, flight }) {
   cardFlight.innerText = flight;
   cardBody.appendChild(cardFlight);
 
-  const cardPassenger = document.createElement("p");
-  cardPassenger.setAttribute("class", "card-text");
-  cardPassenger.innerText = `${lastName}, ${firstName}`;
-  cardBody.appendChild(cardPassenger);
+  const cardFirstName = document.createElement("p");
+  cardFirstName.setAttribute("class", "card-text");
+  cardFirstName.innerText = `First Name: ${firstName}`;
+  cardBody.appendChild(cardFirstName);
+
+  const cardLastName = document.createElement("p");
+  cardLastName.setAttribute("class", "card-text");
+  cardLastName.innerText = `Last Name: ${lastName}`;
+  cardBody.appendChild(cardLastName);
 
   const cardEmail = document.createElement("p");
   cardEmail.setAttribute("class", "card-text");
@@ -116,14 +121,13 @@ function handleEditCard(evt) {
 
   const cardBody = evt.target.parentElement;
 
-  if (
-    newLastName !== null &&
-    newLastName.length > 0 &&
-    newFirstName !== null &&
-    newFirstName.length > 0
-  ) {
-    const passengerElt = cardBody.children[1];
-    passengerElt.innerText = `${newLastName}, ${newFirstName}`;
+  if (newFirstName !== null && newFirstName.length > 0) {
+    const passengerFirstNameElt = cardBody.children[1];
+    passengerFirstNameElt.innerText = `First Name: ${newFirstName}`;
+  }
+  if (newLastName !== null && newLastName.length > 0) {
+    const passengerLastNameElt = cardBody.children[2];
+    passengerLastNameElt.innerText = `Last Name: ${newLastName}`;
   }
 
   if (newEmail !== null && newEmail.length > 0) {
