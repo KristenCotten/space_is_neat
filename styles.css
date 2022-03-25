@@ -3,7 +3,7 @@
 }
 body {
   color: white;
-  background-image: url("https://images.unsplash.com/photo-1630694093867-4b947d812bf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80");
+  background-image: url("https://images-assets.nasa.gov/image/PIA14832/PIA14832~medium.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;      
@@ -29,4 +29,9 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+#mars_report_hdg {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
 }
