@@ -89,15 +89,13 @@ async function bookTrip({ firstName, lastName, email, flight }) {
   cardEmail.innerText = email;
   cardBody.appendChild(cardEmail);
 
-  // <button class="btn btn-warning">Edit</button>
-  const editBtn = document.createElement("button"); // <button></button
+  const editBtn = document.createElement("button");
   editBtn.classList.add("btn", "btn-warning");
   editBtn.innerText = "Edit";
   editBtn.addEventListener("click", handleEditCard);
   cardBody.appendChild(editBtn);
 
-  // <button class="btn btn-danger">Delete</button>
-  const deleteBtn = document.createElement("button"); // <button></button
+  const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn", "btn-danger");
   deleteBtn.innerText = "Delete";
   deleteBtn.addEventListener("click", handleDeleteCard);
@@ -107,6 +105,7 @@ async function bookTrip({ firstName, lastName, email, flight }) {
 function handleDeleteCard(evt) {
   evt.target.parentElement.parentElement.remove();
 
+  //update session storage with new data
   sessionStorage.setItem(
     "tripListItems",
     document.getElementById("trip_container").innerHTML
@@ -135,6 +134,7 @@ function handleEditCard(evt) {
     emailElt.innerText = newEmail;
   }
 
+  //update session sttorage with new data
   sessionStorage.setItem(
     "tripListItems",
     document.getElementById("trip_container").innerHTML
